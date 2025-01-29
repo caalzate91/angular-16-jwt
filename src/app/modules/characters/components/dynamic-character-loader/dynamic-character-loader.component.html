@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <button class="btn btn-primary btn-block" (click)="loadCharacters()">Cargar Todos los Personajes</button>
+        </div>
+        <div class="col-md-6">
+            <form [formGroup]="searchForm" (ngSubmit)="searchCharacters()">
+                <div class="form-group">
+                    <input class="form-control" formControlName="name" placeholder="Name" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" formControlName="status" placeholder="Status" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" formControlName="species" placeholder="Species" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" formControlName="type" placeholder="Type" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" formControlName="gender" placeholder="Gender" />
+                </div>
+                <button class="btn btn-secondary btn-block" type="submit">Buscar Personajes</button>
+            </form>
+        </div>
+    </div>
+    <div class="spinner" *ngIf="isLoading">
+        <img src="assets/loading.gif" alt="Loading..." />
+    </div>
+    <div class="row" #container></div>
+</div>
